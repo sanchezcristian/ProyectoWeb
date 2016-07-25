@@ -10,17 +10,34 @@
   </servlet>
   
     <servlet>
-    <servlet-name>index</servlet-name>
+    <description></description>
+    <display-name>SingUpController</display-name>
+    <servlet-name>SingUpController</servlet-name>
+    <servlet-class>comunidadIT.controller.SingUpController</servlet-class>
+  </servlet>
+  
+    <servlet>
+    <servlet-name>/</servlet-name>
     <jsp-file>/WEB-INF/login.jsp</jsp-file>
+</servlet>
+
+    <servlet>
+    <servlet-name>SingUp</servlet-name>
+    <jsp-file>/WEB-INF/singup.jsp</jsp-file>
 </servlet>
 
 <servlet-mapping>
     <servlet-name>LoginController</servlet-name>
     <url-pattern>/LoginController</url-pattern>
   </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>SingUp</servlet-name>
+    <url-pattern>/SingUp</url-pattern>
+  </servlet-mapping>
 
 <servlet-mapping>
-    <servlet-name>index</servlet-name>
-    <url-pattern>/index</url-pattern>
+    <servlet-name>/</servlet-name>
+    <url-pattern>/</url-pattern>
   </servlet-mapping>
 </web-app>

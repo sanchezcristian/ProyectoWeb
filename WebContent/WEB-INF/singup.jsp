@@ -7,7 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	Login failed, please try again. 
-	<p><a href="/ProyectoWeb/">Back</a></p>
+	<h1>Sing up</h1>
+	<form action="RegisterController" method="post">
+		Username : <input type="text" name="username"> <BR>
+		Password : <input type="password" name="password"> <BR>
+		<input type="submit" value="Sing Up"/>
+	</form>
+
 </body>
 </html>

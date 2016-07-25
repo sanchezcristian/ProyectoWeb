@@ -7,11 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<h1>Log in</h1>
 	<form action="LoginController" method="post">
-		Enter username : <input type="text" name="username"> <BR>
-		Enter password : <input type="password" name="password"> <BR>
-		<input type="submit" />
+		Username : <input type="text" name="username"> <BR>
+		Password : <input type="password" name="password"> <BR>
+		<input type="submit" value="Log in"/>
 	</form>
+	<p><a href="SingUp">Sing up</a></p>
 
 </body>
 </html>

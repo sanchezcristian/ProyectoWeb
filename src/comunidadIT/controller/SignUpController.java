@@ -9,19 +9,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import comunidadIT.service.LoginService;
+import comunidadIT.service.SignUpService;
 
-public class LoginController extends HttpServlet{
+public class SignUpController extends HttpServlet{
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse responser) 
-					throws ServletException, IOException{
-		
+			throws ServletException, IOException{
+
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		
 		RequestDispatcher rd = null;
 		
-		LoginService userLogin = new LoginService();
-		if(userLogin.checkUser(username, password)){
+		SignUpService singUp = new SignUpService();
+		if(!singUp.existUser(username, password)){
 			rd = request.getRequestDispatcher("/WEB-INF/success.jsp");
 			request.setAttribute("user", username);
 		}else rd = request.getRequestDispatcher("/WEB-INF/error.jsp");
