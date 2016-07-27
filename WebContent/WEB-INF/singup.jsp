@@ -4,14 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Sign up</title>
 </head>
 <body>
-	<h1>Sing up</h1>
-	<form action="RegisterController" method="post">
+	<h1>Sign up</h1>
+	<form action="SignUpController" method="post">
 		Username : <input type="text" name="username"> <BR>
 		Password : <input type="password" name="password"> <BR>
-		<input type="submit" value="Sing Up"/>
+		<input type="submit" value="Sign Up"/>
 	</form>
 
 </body>

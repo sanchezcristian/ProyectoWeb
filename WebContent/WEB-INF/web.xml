@@ -11,9 +11,9 @@
   
     <servlet>
     <description></description>
-    <display-name>SingUpController</display-name>
-    <servlet-name>SingUpController</servlet-name>
-    <servlet-class>comunidadIT.controller.SingUpController</servlet-class>
+    <display-name>SignUpController</display-name>
+    <servlet-name>SignUpController</servlet-name>
+    <servlet-class>comunidadIT.controller.SignUpController</servlet-class>
   </servlet>
   
     <servlet>
@@ -22,7 +22,7 @@
 </servlet>
 
     <servlet>
-    <servlet-name>SingUp</servlet-name>
+    <servlet-name>SignUp</servlet-name>
     <jsp-file>/WEB-INF/singup.jsp</jsp-file>
 </servlet>
 
@@ -32,7 +32,13 @@
   </servlet-mapping>
   
   <servlet-mapping>
-    <servlet-name>SingUp</servlet-name>
+    <servlet-name>SignUpController</servlet-name>
+    <url-pattern>/SignUpController</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet-mapping>
+    <servlet-name>SignUp</servlet-name>
     <url-pattern>/SingUp</url-pattern>
   </servlet-mapping>
 

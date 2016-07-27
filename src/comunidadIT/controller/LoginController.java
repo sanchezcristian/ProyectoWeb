@@ -21,7 +21,7 @@ public class LoginController extends HttpServlet{
 		RequestDispatcher rd = null;
 		
 		LoginService userLogin = new LoginService();
-		if(userLogin.checkUser(username, password)){
+		if(userLogin.existUser(username, password)){
 			rd = request.getRequestDispatcher("/WEB-INF/success.jsp");
 			request.setAttribute("user", username);
 		}else rd = request.getRequestDispatcher("/WEB-INF/error.jsp");

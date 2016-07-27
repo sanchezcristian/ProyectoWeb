@@ -5,19 +5,13 @@ import comunidadIT.model.Registered;
 
 public class SignUpDAO {
 	
-	DataBase db = new DataBase();
+	private static DataBase db = new DataBase();
 	
-	public boolean addUser (String username, String password){
-		Registered registered = new Registered();
-		registered.setUsername(username);
-		registered.setPassword(password);
+	public boolean addUser (Registered registered){
 		return (db.addUser(registered));
 	}
 	
-	public boolean existUser (String username, String password){
-		Registered registered = new Registered();
-		registered.setUsername(username);
-		registered.setPassword(password);
+	public boolean existUser (Registered registered){;
 		return (db.existUser(registered));
 	}
 	

@@ -8,5 +8,6 @@
 </head>
 <body>
 	Welcome ${requestScope['user']}.
+	<p><a href="LogIn">Log In</a></p>
 </body>
 </html>

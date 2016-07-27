@@ -1,5 +1,6 @@
 package comunidadIT.DB;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import comunidadIT.model.Registered;
@@ -7,8 +8,8 @@ import comunidadIT.model.User;
 
 public class DataBase {
 	
-	private Set<User> user;
-
+	private Set<User> user = new HashSet<User>();
+	
 	public Set<User> getUser() {
 		return user;
 	}
