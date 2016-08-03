@@ -7,7 +7,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import comunidadIT.service.SignUpService;
+
+import comunidadIT.service.UserService;
 
 public class SignUpController extends HttpServlet{
 	
@@ -19,12 +20,12 @@ public class SignUpController extends HttpServlet{
 		
 		RequestDispatcher rd = null;
 		
-		SignUpService signUp = new SignUpService();
-		if(!signUp.existUser(username, password)){
-			signUp.addUser(username, password);
+		UserService userService = new UserService();
+		if(!userService.existUser(username, password)){
+			userService.addUser(username, password);
 			rd = request.getRequestDispatcher("/WEB-INF/success.jsp");
 			request.setAttribute("user", username);
-		}else rd = request.getRequestDispatcher("/WEB-INF/error.jsp");
+		} else rd = request.getRequestDispatcher("/WEB-INF/error.jsp");
 		rd.forward(request, responser);
 	}
 

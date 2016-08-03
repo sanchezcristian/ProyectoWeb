@@ -7,8 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import comunidadIT.service.LoginService;
+import comunidadIT.service.UserService;
 
 public class LoginController extends HttpServlet{
 	
@@ -20,8 +19,8 @@ public class LoginController extends HttpServlet{
 		
 		RequestDispatcher rd = null;
 		
-		LoginService userLogin = new LoginService();
-		if(userLogin.existUser(username, password)){
+		UserService userService = new UserService();
+		if(userService.existUser(username, password)){
 			rd = request.getRequestDispatcher("/WEB-INF/success.jsp");
 			request.setAttribute("user", username);
 		}else rd = request.getRequestDispatcher("/WEB-INF/error.jsp");
