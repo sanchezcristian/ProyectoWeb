@@ -5,13 +5,12 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import com.mysql.*;
 
 public class ConnectionDB {
 
 	private final String userName = "root";
 	private final String password = "root";
-	private final String dbName = "empresa";
+	private final String dbName = "mydb";
 	private final String driver = "com.mysql.jdbc.Driver";
 	private final String url = "jdbc:mysql://localhost:3306/";
 	private Connection connection = null;
