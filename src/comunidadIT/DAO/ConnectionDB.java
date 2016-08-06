@@ -25,14 +25,8 @@ public class ConnectionDB {
 			}
 		} catch (Exception e) {
 			System.out.println("ERROR: Exeption " + e);
-		} finally {
-			try {
-				if (connection != null)
-					connection.close();
-			} catch (SQLException sqle) {
-				System.out.println("ERROR: Exeption " + sqle);
-			}
-		}
+		} 
+		//FIXME Cuando cierro la conexcion????
 	}
 
 	public ResultSet getQuery(String query) {

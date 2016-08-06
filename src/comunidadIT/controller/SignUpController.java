@@ -21,8 +21,7 @@ public class SignUpController extends HttpServlet{
 		RequestDispatcher rd = null;
 		
 		UserService userService = new UserService();
-		if(!userService.existUser(username, password)){
-			userService.addUser(username, password);
+		if(userService.addUser(username, password)){
 			rd = request.getRequestDispatcher("/WEB-INF/success.jsp");
 			request.setAttribute("user", username);
 		} else rd = request.getRequestDispatcher("/WEB-INF/error.jsp");

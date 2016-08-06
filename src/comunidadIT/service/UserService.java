@@ -1,12 +1,14 @@
 package comunidadIT.service;
 
-import comunidadIT.DAO.UserDAO;
+import comunidadIT.DAO.AdminDAO;
+import comunidadIT.DAO.RegisteredDAO;
+import comunidadIT.model.Admin;
 import comunidadIT.model.Registered;
 
 public class UserService {
 	
-	private static UserDAO userDAO = new UserDAO();
-	
+	private static AdminDAO adminDAO = new AdminDAO();
+	private static RegisteredDAO registeredDAO = new RegisteredDAO();
 	
 	private Registered createRegistered(String username, String password){
 		Registered registered = new Registered();
@@ -14,15 +16,17 @@ public class UserService {
 		registered.setPassword(password);
 		return registered;
 	}
-	
+		
 	public boolean existUser(String username, String password){
-		Registered registered = createRegistered(username, password);
-		return (userDAO.existUser(registered));
+		Admin admin = new Admin();
+		admin.setUsername(username);
+		admin.setPassword(password);
+		return (adminDAO.exist(admin));
 	}
 	
 	public boolean addUser(String username, String password){
 		Registered registered = createRegistered(username, password);
-		return (userDAO.addUser(registered));
+		return (registeredDAO.add(registered));
 	}
 
 }
