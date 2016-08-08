@@ -25,7 +25,7 @@ public class LoginController extends HttpServlet {
 		if (userService.existUser(username, password)) {
 			request.getSession().setAttribute("username", username);
 			if (userService.isAdmin(username)) {
-				request.getSession().setAttribute("role", "admin");
+				//request.getSession().setAttribute("name", user);
 				rd = request.getRequestDispatcher("/WEB-INF/admin.jsp");
 			} else {
 				request.getSession().setAttribute("role", "user");

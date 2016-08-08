@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<%@ page language="java"%>
-<%@ page import="java.util.List"%>
-<%@ page import="java.util.ArrayList"%>
-<%@ page import="comunidadIT.service.ProductService"%>
-<%@ page import="comunidadIT.model.Product"%>
+<%@ page language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
+
 
 <html>
 <head>
@@ -14,32 +15,24 @@
 </head>
 <body>
 	<table>
-		<th>Nombre</th>
-		<th>Marca</th>
-		<th>Precio</th>
-		<%
-			ProductService ps = new ProductService();
-			List<Product> lista = new ArrayList<>();
-			lista = ps.getProductos();
-
-			for (int i = 0; i < lista.size(); i++) {
-				out.println("<tr>");
-				out.println("<td>" + lista.get(i).getName() + "</td>");
-				out.println("<td>" + lista.get(i).getDescription() + "</td>");
-				out.println("<td>" + lista.get(i).getPrice() + "</td>");
-				out.println("</tr>");
-			}
-		%>
-		<c:forEach items="${product}" var="current">
+		<thead>
 			<tr>
-				<td><c:out value="${current.name}" />
-				<td>
-				<td><c:out value="${current.description}" />
-				<td>
-				<td><c:out value="${current.price}" />
-				<td>
+				<th>Nombre</th>
+				<th>Categoria</th>
+				<th>Precio</th>
 			</tr>
-		</c:forEach>
+		</thead>
+		<tbody>
+			<c:forEach items="${product}" var="product">
+				<tr>
+					<td><c:out value="${product.name}" /></td>
+					<td><c:out value="${product.description}" /></td>
+					<td><c:out value="${product.price}" /></td>
+
+				</tr>
+			</c:forEach>
+
+		</tbody>
 	</table>
 
 </body>

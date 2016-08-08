@@ -4,18 +4,19 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import comunidadIT.model.Admin;
+import comunidadIT.model.User;
 
 public class AdminDAO {
 
 	private ConnectionDB connDB = new ConnectionDB();
 
-	public boolean exist(Admin admin) {
+	public boolean exist(User user) {
 		String consul = "SELECT * FROM user";
 		ResultSet rs = connDB.getQuery(consul);
 		try {
 			while (rs.next()) {
-				if (admin.getUsername().equals(rs.getString("name")) &&
-						admin.getPassword().equals(rs.getString("pass")))
+				if (user.getUsername().equals(rs.getString("name")) &&
+						user.getPassword().equals(rs.getString("pass")))
 					return true;
 			}
 		} catch (SQLException e) {
