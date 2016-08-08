@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	
 	Welcome ${requestScope['user']}.
 	<%= session.getAttribute( "role" ) %>
 	<p><a href="LogIn">Log In</a></p>

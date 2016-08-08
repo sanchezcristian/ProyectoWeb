@@ -24,6 +24,12 @@ public class UserService {
 		return (adminDAO.exist(admin));
 	}
 	
+	public boolean isAdmin(String username){
+		Admin admin = new Admin();
+		admin.setUsername(username);
+		return (adminDAO.isAdmin(admin));
+	}
+	
 	public boolean addUser(String username, String password){
 		Registered registered = createRegistered(username, password);
 		return (registeredDAO.add(registered));

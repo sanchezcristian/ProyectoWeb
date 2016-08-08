@@ -9,7 +9,7 @@ public class RegisteredDAO {
 	private static ConnectionDB connDB = new ConnectionDB();
 
 	public boolean exist(Registered registered){
-		String consult = "SELECT * FROM admin";
+		String consult = "SELECT * FROM user";
 		ResultSet rs = connDB.getQuery(consult);
 		try {
 			while (rs.next()){
@@ -24,7 +24,7 @@ public class RegisteredDAO {
 	
 	public boolean add(Registered registered){
 		if (!exist(registered)){
-			String consult = "INSERT INTO registered (name,pass) VALUE ('"
+			String consult = "INSERT INTO user (name,pass) VALUE ('"
 					+ registered.getUsername() + "','" + registered.getPassword() + "')";
 			connDB.setQuery(consult);
 			return true;
