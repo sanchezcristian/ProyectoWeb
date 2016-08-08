@@ -26,6 +26,11 @@
     <jsp-file>/WEB-INF/singup.jsp</jsp-file>
 </servlet>
 
+  <servlet>
+    <servlet-name>ListProducts</servlet-name>
+    <jsp-file>/WEB-INF/listProducts.jsp</jsp-file>
+</servlet>
+
 <servlet-mapping>
     <servlet-name>LoginController</servlet-name>
     <url-pattern>/LoginController</url-pattern>
@@ -40,6 +45,11 @@
   <servlet-mapping>
     <servlet-name>SignUp</servlet-name>
     <url-pattern>/SingUp</url-pattern>
+  </servlet-mapping>
+  
+   <servlet-mapping>
+    <servlet-name>ListProducts</servlet-name>
+    <url-pattern>/ListProducts</url-pattern>
   </servlet-mapping>
 
 <servlet-mapping>

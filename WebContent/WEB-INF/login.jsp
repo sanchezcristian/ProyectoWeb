@@ -14,6 +14,7 @@
 		<input type="submit" value="Log in"/>
 	</form>
 	<p><a href="SingUp">Sing up</a></p>
+	<p><a href="ListProducts">List of Products</a></p>
 
 </body>
 </html>
