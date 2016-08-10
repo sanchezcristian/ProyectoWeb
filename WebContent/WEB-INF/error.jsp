@@ -7,6 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<table border="0" width="1000" align="center">
+		<tr bgcolor="skyblue">
+			<th><a href="ListProducts?action=see">Productos</a></th>
+			<th><a href="LogIn">Loguearse</a></th>
+			<th><a href="SignUp">Registrarse</a>
+			<th width="200"></th>
+		</tr>
+	</table>
 	Login failed, please try again. 
 	<p><a href="/ProyectoWeb/">Back</a></p>
 </body>

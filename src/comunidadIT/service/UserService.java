@@ -1,38 +1,31 @@
 package comunidadIT.service;
 
-import comunidadIT.DAO.AdminDAO;
-import comunidadIT.DAO.RegisteredDAO;
-import comunidadIT.model.Admin;
-import comunidadIT.model.Registered;
+import comunidadIT.DAO.UserDAO;
+import comunidadIT.model.User;
 
 public class UserService {
-	
-	private static AdminDAO adminDAO = new AdminDAO();
-	private static RegisteredDAO registeredDAO = new RegisteredDAO();
-	
-	private Registered createRegistered(String username, String password){
-		Registered registered = new Registered();
-		registered.setUsername(username);
-		registered.setPassword(password);
-		return registered;
+
+	UserDAO userDAO = new UserDAO();
+
+	private User createUser(String username, String password) {
+		User user = new User();
+		user.setUsername(username);
+		user.setPassword(password);
+		return user;
 	}
-		
-	public boolean existUser(String username, String password){
-		Admin admin = new Admin();
-		admin.setUsername(username);
-		admin.setPassword(password);
-		return (adminDAO.exist(admin));
+
+	public boolean existUser(String username, String password) {
+		return (userDAO.exist(createUser(username, password)));
 	}
-	
-	public boolean isAdmin(String username){
-		Admin admin = new Admin();
-		admin.setUsername(username);
-		return (adminDAO.isAdmin(admin));
+
+	public boolean isAdmin(String username) {
+		User user = new User();
+		user.setUsername(username);
+		return (userDAO.isAdmin(user));
 	}
-	
-	public boolean addUser(String username, String password){
-		Registered registered = createRegistered(username, password);
-		return (registeredDAO.add(registered));
+
+	public boolean addUser(String username, String password) {
+		return (userDAO.add(createUser(username, password)));
 	}
 
 }

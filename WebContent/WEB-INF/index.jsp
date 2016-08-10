@@ -11,15 +11,12 @@
 	<table border="0" width="1000" align="center">
 		<tr bgcolor="skyblue">
 			<th><a href="ListProducts?action=see">Productos</a></th>
-			<th><a href="index.jsp">Registrar Productos</a></th>
-			<th><a href="index.jsp">Registrar Venta </a></th>
-			<th><a href="index.jsp">Consultar ventas</a></th>
-			<th><a href="index.jsp">Catálogo</a></th>
-			<th><a href="ServletLogeo?accion=cerrar">Cerrar Sección</a></th>
+			<th><a href="LogIn">Loguearse</a></th>
+			<th><a href="SignUp">Registrarse</a>
 			<th width="200"></th>
 		</tr>
 	</table>
-	<h2 align="center">Productos</h2>
+	<h2 align="center">Bienvenido a mi pagina web!</h2>
 
 </body>
 </html>

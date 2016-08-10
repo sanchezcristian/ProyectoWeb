@@ -1,10 +1,19 @@
 package comunidadIT.model;
 
-public abstract class User {
+public class User {
 	
 	private String username;
 	private String password;
+	private String role;
 		
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

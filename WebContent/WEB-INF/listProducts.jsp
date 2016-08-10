@@ -15,15 +15,14 @@
 </head>
 <body>
 	<table border="0" width="1000" align="center">
+		<table border="0" width="1000" align="center">
 		<tr bgcolor="skyblue">
-			<th><a href="index.jsp">Productos</a></th>
-			<th><a href="index.jsp">Registrar Productos</a></th>
-			<th><a href="index.jsp">Registrar Venta </a></th>
-			<th><a href="index.jsp">Consultar ventas</a></th>
-			<th><a href="index.jsp">Catálogo</a></th>
+			<th><a href="ListProducts?action=see">Productos</a></th>
+			<th><a href="ListProducts?action=add">Agregar Productos</a></th>
 			<th><a href="ServletLogeo?accion=cerrar">Cerrar Sección</a></th>
 			<th width="200"></th>
 		</tr>
+	</table>
 	</table>
 	<h2 align="center">Productos</h2>
    <table border="1">
@@ -47,6 +46,7 @@
                     <td><c:out value="${product.description}" /></td>         
                     <td><c:out value="${product.price}" /></td>
                		<td><a role="button" href="ListProducts?action=delete&id=<c:out value="${product.cod}"/>">Eliminar</a></td>
+               		<td><a role="button" href="ListProducts?action=update&id=<c:out value="${product.cod}"/>">Modificar</a></td>
                  </tr>
             </c:forEach>
                

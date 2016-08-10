@@ -17,30 +17,32 @@
 	</table>
 	<br>
 	<br>
-	<form method="get" action="ListProducts?action=new">
+	<form method="get" action="ListProducts?action=updateDB">
 		<div>
-			<input type="hidden" name="action" value="new" />
+			<input type="hidden" name="action" value="updateDB" />
 			<table border="1">
+			<c:forEach items="${product}" var="product">
 				<tr>
 					<td>Codigo</td>
-					<td><input type="text" name="cod" value="" /></td>
+					<td><input type="text" name="cod" value="${product.cod}" readonly/></td>
 				</tr>
 				<tr>
 					<td>Nombre</td>
-					<td><input type="text" name="name" value="" /></td>
+					<td><input type="text" name="name" value="${product.name}" /></td>
 				</tr>
 				<tr>
 					<td>Descripción</td>
-					<td><input type="text" name="description" value="" /></td>
+					<td><input type="text" name="description" value="${product.description}" /></td>
 				</tr>
 				<tr>
 					<td>Precio</td>
-					<td><input type="text" name="price" value="0" /></td>
+					<td><input type="text" name="price" value="${product.price}" /></td>
 				</tr>
 				<tr>
 					<td></td>
-					<td><input type="submit" value="Agregar Producto" /></td>
+					<td><input type="submit" value="Actualizar" /></td>
 				</tr>
+				</c:forEach>
 			</table>
 		</div>
 	</form>
