@@ -69,16 +69,15 @@ public class ProductController extends HttpServlet {
 					request.setAttribute("product", ps.getProducts());
 					rd = request.getRequestDispatcher("/WEB-INF/listProducts.jsp");
 					rd.forward(request, response);
+					break;
 				default:
 					System.out.println("ERROR: En ProductController doGET");
 				}
 			} else if (session.getAttribute("role").equals("client")) {
-				switch (action) {
-				case "see":
+				if(action.equals("see")){
 					request.setAttribute("product", ps.getProducts());
 					rd = request.getRequestDispatcher("/WEB-INF/listProductsClient.jsp");
 					rd.forward(request, response);
-					break;
 				}
 			} 
 		}else {

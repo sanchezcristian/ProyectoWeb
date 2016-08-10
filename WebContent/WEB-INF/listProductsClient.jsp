@@ -40,9 +40,7 @@
 					<td><c:out value="${product.name}" /></td>
 					<td><c:out value="${product.description}" /></td>
 					<td><c:out value="${product.price}" /></td>
-					<td><a role="button"
-						href="ListProducts?action=delete&id=<c:out value="${product.cod}"/>">Añadir
-							al Carrito</a></td>
+					<td><a role="button" href="ListProducts?action=delete&id=<c:out value="${product.cod}"/>">Añadir al Carrito</a></td>
 				</tr>
 			</c:forEach>
 

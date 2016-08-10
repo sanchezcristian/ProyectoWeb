@@ -28,7 +28,7 @@ public class LoginController extends HttpServlet {
 				request.getSession().setAttribute("role", "admin");
 				rd = request.getRequestDispatcher("/WEB-INF/admin.jsp");
 			} else {
-				request.getSession().setAttribute("role", "user");
+				request.getSession().setAttribute("role", "client");
 				rd = request.getRequestDispatcher("/WEB-INF/success.jsp");
 			}
 		} else

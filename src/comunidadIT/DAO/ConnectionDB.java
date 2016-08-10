@@ -13,7 +13,8 @@ public class ConnectionDB {
 	private final String dbName = "mydb";
 	private final String driver = "com.mysql.jdbc.Driver";
 	private final String url = "jdbc:mysql://localhost:3306/";
-	private Connection connection = null;
+	private Connection connection;
+	private static ConnectionDB connectionDB;
 
 	public ConnectionDB() {
 
@@ -27,6 +28,13 @@ public class ConnectionDB {
 			System.out.println("ERROR: Exeption " + e);
 		} 
 		//FIXME Cuando cierro la conexcion????
+	}
+	
+	public static ConnectionDB getConnectionDB (){
+		if (connectionDB == null){
+			connectionDB =  new ConnectionDB();
+		}
+		return connectionDB;
 	}
 
 	public ResultSet getQuery(String query) {

@@ -6,7 +6,7 @@ import comunidadIT.model.Product;
 
 public class ProductDAO {
 
-	private ConnectionDB connDB = new ConnectionDB();
+	private ConnectionDB connDB = (ConnectionDB) ConnectionDB.getConnectionDB();
 
 	public void add(Product product) {
 		String query = "INSERT INTO product (id,name, description, price) " + "VALUES (" + product.getCod() + ",'"

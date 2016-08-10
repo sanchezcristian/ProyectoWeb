@@ -29,7 +29,6 @@
 				<th>Nombre</th>
 				<th>Descripcion</th>
 				<th>Precio</th>
-				<th colspan=4>Action</th>
 			</tr>
 		</thead>
 		<tbody>

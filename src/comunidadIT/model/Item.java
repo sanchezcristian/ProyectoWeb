@@ -4,6 +4,15 @@ public class Item {
 
 	private Product product;
 	private int quantity;
+	private double subtotal;
+
+	public double getSubtotal() {
+		return (product.getPrice() * quantity);
+	}
+
+	public void setSubtotal(double subtotal) {
+		this.subtotal = subtotal;
+	}
 
 	public Product getProduct() {
 		return product;
