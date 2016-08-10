@@ -3,7 +3,6 @@ package comunidadIT.service;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 import comunidadIT.DAO.ProductDAO;
 import comunidadIT.model.Product;
 
@@ -12,11 +11,12 @@ public class ProductService {
 	private ArrayList<Product> listProduct = new ArrayList<Product>();
 	private ProductDAO productDAO = new ProductDAO();
 
-	public ArrayList<Product> getProductos() {
+	public ArrayList<Product> getProducts() {
 		try {
 			ResultSet rs = productDAO.getProduct();
 			while (rs.next()) {
 				Product product = new Product();
+				product.setCod(rs.getInt("id"));
 				product.setName(rs.getString("name"));
 				System.out.println(product.getName());
 				product.setDescription(rs.getString("description"));
@@ -33,5 +33,15 @@ public class ProductService {
 		}
 		return listProduct;
 	}
+	
+	public void deleteProduct(int id){
+		productDAO.deleteProduct(id);		
+	}
+	
+	public void addProduct (int id, String name, String description, double price){
+		Product product = new Product(id, name, description , price);
+		productDAO.add(product);		
+	}
+
 
 }

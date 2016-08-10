@@ -9,8 +9,8 @@ public class ProductDAO {
 	private ConnectionDB connDB = new ConnectionDB();
 
 	public void add(Product product) {
-		String query = "INSERT INTO producto (name, description, price) " + "VALUES (" + product.getName() + "; "
-				+ product.getDescription() + "; " + product.getPrice() + ")";
+		String query = "INSERT INTO product (id,name, description, price) " + "VALUES (" + product.getCod() + ",'" 
+				+ product.getName() + "','" + product.getDescription() + "'," + product.getPrice() + ");";
 		connDB.setQuery(query);
 	}
 
@@ -18,6 +18,11 @@ public class ProductDAO {
 		String query = "SELECT * FROM product;";
 		return connDB.getQuery(query);
 
+	}
+	
+	public void deleteProduct(int cod){
+		String query = "DELETE FROM product where id=" + cod + ";";
+		connDB.setQuery(query);
 	}
 
 }

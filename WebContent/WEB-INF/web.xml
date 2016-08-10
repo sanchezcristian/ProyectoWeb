@@ -20,11 +20,16 @@
     <description></description>
     <display-name>ListProducts</display-name>
     <servlet-name>ListProducts</servlet-name>
-    <servlet-class>comunidadIT.controller.PorductController</servlet-class>
+    <servlet-class>comunidadIT.controller.ProductController</servlet-class>
   </servlet>
   
     <servlet>
     <servlet-name>/</servlet-name>
+    <jsp-file>/WEB-INF/index.jsp</jsp-file>
+</servlet>
+
+    <servlet>
+    <servlet-name>LogIn</servlet-name>
     <jsp-file>/WEB-INF/login.jsp</jsp-file>
 </servlet>
 
@@ -33,6 +38,10 @@
     <jsp-file>/WEB-INF/singup.jsp</jsp-file>
 </servlet>
 
+  <servlet>
+    <servlet-name>AddProduct</servlet-name>
+    <jsp-file>/WEB-INF/addProduct.jsp</jsp-file>
+</servlet>
 
 <servlet-mapping>
     <servlet-name>LoginController</servlet-name>
